@@ -38,9 +38,10 @@ Allure отчеты
 bash  
 
 # Сгенерировать отчеты
-docker run saucedemo-tests pytest --alluredir=allure-results  
+docker run -v "%cd%"/allure-results:/app/allure-results saucedemo-tests pytest --alluredir=/app/allure-results
 
 # Запуск с детальным выводом
 docker run saucedemo-tests pytest -v
 
 # Для удобства добавлен pytest.ini
+
